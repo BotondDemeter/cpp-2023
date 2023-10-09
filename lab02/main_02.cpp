@@ -20,5 +20,13 @@ int main(int argc, char** argv) {
     cout << "Tavolsag: " << distance(p1, p2) << endl;
     delete pp1;
     delete pp2;
+    Point a = {0,0};
+    Point b = {2, 0};
+    Point c = {2, 2};
+    Point d = {0, 2};
+    if(isSquare(a, b, c, d))
+        cout << "A megadott pontok negyzetet alkotnak!";
+    else
+        cout << "A megadott pontok nem alkotnak negyzetet!";
     return 0;
 }
