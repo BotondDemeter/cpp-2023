@@ -7,6 +7,9 @@
 #include <vector>
 #include "util.h"
 #include "fstream"
+#include <cstdlib>
+#include <ctime>
+#include <climits>
 
 using namespace std;
 double distance(const Point &a, const Point &b) {
@@ -32,7 +35,7 @@ void testIsSquare(const char *filename) {
         return;
     }
     vector<Point> points;
-    double x, y;
+    int x, y;
     while (file >> x >> y) {
         Point p = {x, y};
         points.push_back(p);
@@ -45,9 +48,35 @@ void testIsSquare(const char *filename) {
         Point d = points[i + 3];
         if (isSquare(a, b, c, d))
             cout << a.getX() << " " << a.getY() << " " << b.getX() << " " << b.getY() << " " << c.getX() << " "
-                 << c.getY() << " " << d.getX() << " " << d.getY() << "YES" << endl;
+                 << c.getY() << " " << d.getX() << " " << d.getY() << " YES" << endl;
         else
             cout << a.getX() << " " << a.getY() << " " << b.getX() << " " << b.getY() << " " << c.getX() << " "
-                 << c.getY() << " " << d.getX() << " " << d.getY() << "NO" << endl;
+                 << c.getY() << " " << d.getX() << " " << d.getY() << " NO" << endl;
     }
+}
+
+Point *createArray(int numPoints) {
+    Point * points = new Point[numPoints];
+    srand(time(nullptr));
+    for(int i = 0; i < numPoints; ++i){
+        points[i].x = rand() % 2001;
+        points[i].y = rand() % 2001;
+    }
+    return points;
+}
+
+void printArray(Point *points, int numPoints) {
+    for (int i = 0; i < numPoints; ++i) {
+        cout << points[i].x << " " << points[i].y << endl;
+    }
+}
+
+pair<Point, Point> closestPoints(Point *points, int numPoints) {
+    int closest = INT_MAX;
+    pair<Point, Point> closestPair;
+    for (int i = 0; i < numPoints; ++i) {
+        if(distance(points[i].x, points[i].y) < closest)
+            closestPair = make_pair(points[i].getX(), points[i].getY());
+    }
+    return closestPair;
 }

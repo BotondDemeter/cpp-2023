@@ -24,9 +24,22 @@ int main(int argc, char** argv) {
     Point b = {2, 0};
     Point c = {2, 2};
     Point d = {0, 2};
+    //5
     if(isSquare(a, b, c, d))
-        cout << "A megadott pontok negyzetet alkotnak!";
+        cout << "A megadott pontok negyzetet alkotnak!" << endl;
     else
-        cout << "A megadott pontok nem alkotnak negyzetet!";
+        cout << "A megadott pontok nem alkotnak negyzetet!" << endl;
+    //6
+    testIsSquare("points.txt");
+    //7
+    int N;
+    cout << "Olvassa be a pontok szamat!" << endl;
+    cin >> N;
+    Point* points = createArray(N);
+    //8
+    printArray(points, N);
+    //9
+    pair<Point, Point> closest = closestPoints(points, N);
+    cout <<endl <<"A legkozelebbi pontok: "<< closest.first.x << " " << closest.second.y << endl;
     return 0;
 }
