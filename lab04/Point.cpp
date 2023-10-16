@@ -1,11 +1,10 @@
 //
-// Created by Boti on 10/2/2023.
+// Created by Boti on 10/16/2023.
 //
 
+#include <iostream>
+#include <valarray>
 #include "Point.h"
-#include "iostream"
-#include "../lab04/Point.h"
-
 
 using namespace std;
 
@@ -29,4 +28,8 @@ int Point::getY() const {
 
 void Point::print() const {
     cout << "Point(" << x << ", " << y << ")" << endl;
+}
+
+double Point :: distances(Point point1) const{
+    return sqrt(pow(this->x - point1.x, 2) + pow(this->y - point1.y, 2));
 }
