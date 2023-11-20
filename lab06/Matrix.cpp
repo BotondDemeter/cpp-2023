@@ -188,6 +188,3 @@ Matrix& Matrix::operator=(Matrix&& mat) {
 
     return *this;
 }
-
-
-
