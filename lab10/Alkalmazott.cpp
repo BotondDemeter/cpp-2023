@@ -6,7 +6,7 @@
 #include "Szemely.h"
 
 
-int Alkalmazot::nextId =1;
+int Alkalmazott::nextID =1;
 
 Alkalmazott::Alkalmazott(const string &vezetekNev, const string &keresztNev, int szuletesiEv,
                          const string &munkakor) : Szemely(vezetekNev, keresztNev, szuletesiEv), munkakor(munkakor) {

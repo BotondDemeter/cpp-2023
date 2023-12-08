@@ -13,7 +13,5 @@ ostream& operator<<(ostream &os, const Szemely& sz) {
 }
 
 void Szemely::print(ostream &os) const {
-    os << "Vezeteknev: " << vezetekNev << endl;
-    os << "Keresztnev: " << keresztNev << endl;
-    os << "Szuletesi ev: " << szuletesiEv << endl;
+    os << "Vezeteknev: " << vezetekNev << ", Keresztnev: " << keresztNev << ", Szuletesi ev: " << szuletesiEv;
 }

@@ -21,4 +21,19 @@ void Manager::deleteAlkalmazott(Alkalmazott *alkalmazott) {
     }
 }
 
+int Manager::beosztottakSzama() {
+    return alkalmazottak.size();
+}
+
+void Manager::print(ostream & os) {
+    os << "Manager informaciok:" << endl;
+    Alkalmazott::print(os);
+    os << "Alkalmazottak:" << endl;
+    for(const auto& alkalmazott : alkalmazottak){
+        alkalmazott->print(os);
+        os << endl;
+    }
+}
+const string Manager::MANAGER_MUNKAKOR = "manager";
+
 
