@@ -1,15 +1,14 @@
 //
-// Created by Boti on 12/8/2023.
+// Created by Boti on 12/9/2023.
 //
 
 #ifndef CPP_2022_STUDENTSERVICEIMPL_H
 #define CPP_2022_STUDENTSERVICEIMPL_H
 
-
-#include "StudentService.h"
+#include <vector>
 #include "GraduationDao.h"
+#include "StudentService.h"
 
-using namespace std;
 class StudentServiceImpl : public StudentService{
     GraduationDao *dao;
 public:
@@ -20,6 +19,7 @@ public:
     double getAverage(int id) const override;
     bool isPassed(int id) const override;
 };
+
 
 
 #endif //CPP_2022_STUDENTSERVICEIMPL_H

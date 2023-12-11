@@ -1,6 +1,10 @@
 #include <iostream>
+#include "Settlement.h"
+#include "SettlementStatisticsImpl.h"
 
 int main() {
-    std::cout << "Hello, Lab_12" << std::endl;
-    return 0;
+    //Settlement settlement = {"Marosv", "MS", 3445645};
+    //cout << settlement;
+    SettlementStatisticsImpl statistics;
+    cout << "Settlements: " << statistics.numSettlements();
 }
